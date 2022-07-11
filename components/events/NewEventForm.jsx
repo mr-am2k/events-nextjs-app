@@ -3,7 +3,7 @@ import Card from '../ui/Card';
 import styles from './NewEventForm.module.css'
 
 
-const NewEventForm = (props) => {
+const NewEventForm = ({onAddEvent}) => {
   const titleInputRef = useRef();
   const imageInputRef = useRef();
   const addressInputRef = useRef();
@@ -24,7 +24,7 @@ const NewEventForm = (props) => {
       description: enteredDescription,
     };
 
-    props.onAddEvent(eventData);
+    onAddEvent(eventData);
   }
 
   return (

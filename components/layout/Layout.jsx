@@ -1,11 +1,13 @@
 import MainNavigation from './MainNavigation'
-import styles from './MainNavigation.module.css'
+import styles from './Layout.module.css'
 
-const Layout = () => {
+const Layout = ({children}) => {
     return(
         <div>
             <MainNavigation/>
-            <div className={styles.container}>{props.children}</div>
+            <main className={styles.container}>{children}</main>
         </div>
     )
 }
+
+export default Layout
