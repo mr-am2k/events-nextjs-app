@@ -1,0 +1,1 @@
+//this is page that will display information about special meetup based on it ID 
