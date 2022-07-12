@@ -1,12 +1,15 @@
 //this is home page
-
+import Head from 'next/head'
 import { MongoClient } from 'mongodb'
 import EventList from '../components/events/EventList'
+import { Fragment } from 'react'
 
 const HomePage = (props) => {
 
     return (
-        <EventList events={props.events} />
+        <Fragment>
+            <EventList events={props.events} />
+        </Fragment>
     )
 }
 

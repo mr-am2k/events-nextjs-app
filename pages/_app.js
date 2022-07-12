@@ -1,12 +1,22 @@
-import '../styles/globals.css'
+import Head from 'next/head'
+import { Fragment } from 'react'
 import Layout from '../components/layout/Layout'
+import '../styles/globals.css'
 
 const MyApp = ({ Component, pageProps }) => {
   return (
-    <Layout>
-      <Component {...pageProps} />
+    <Fragment>
+      <Head>
+        <title>Events</title>
+        <meta name='description' content='Add or browse upcoming events in Bosnia and Herzegovina'/>
+        
+      </Head>
 
-    </Layout>
+      <Layout>
+        <Component {...pageProps} />
+
+      </Layout>
+    </Fragment>
   )
 }
 
