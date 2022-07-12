@@ -1,9 +1,14 @@
 //page for adding new event
+const axios = require('axios')
+import { useRouter } from 'next/router'
 import NewEventForm from '../../components/events/NewEventForm'
-
 const NewEvent = () => {
-    const addEventHandler = (enteredEventData) => {
-        console.log(enteredEventData)
+    const router = useRouter()
+    const addEventHandler = async (enteredEventData) => {
+        const response = await axios.post('/api/new-event', enteredEventData)
+        const data = await response.data
+        console.log(data)
+        router.replace('/')
     }
 
     return(
@@ -11,3 +16,5 @@ const NewEvent = () => {
     )
 }
 export default NewEvent
+
+// const response = await axios.post('/api/new-event', JSON.stringify(enteredEventData))

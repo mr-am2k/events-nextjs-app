@@ -2,6 +2,9 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  env: {
+    DB_URL: process.env.DB_URL,
+  }
 }
 
 module.exports = nextConfig
