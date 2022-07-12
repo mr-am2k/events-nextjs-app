@@ -32,7 +32,7 @@ export const getStaticPaths = async () => {
     const events = await eventsCollection.find({}, { _id: 1 }).toArray() //fetching all documents from a collection, but only id from a document
     client.close()
     return {
-        fallback: true, //allows to pre-generate some od id's not all 
+        fallback: 'blocking', //allows to pre-generate some od id's not all 
         paths: events.map(event => ({
             params: { eventID: event._id.toString() } //dynamic way to generate array of paths
         }))
